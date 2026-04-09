@@ -1,101 +1,126 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: #000000;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #F8F9FA;
-    color: #fff;
-    font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+    background: linear-gradient(135deg, #0f0a1f, #1a0f2e);
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    padding: 25px 15px;
+    min-height: 100vh;
 }
-ul,li,a,h4,span,font,b{
-    background-color: #ffffff;
-}
+
 #main {
-    margin: 30px auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 .field {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    color: #6C757D;
-    font-size: 16px;
-    padding: 15px;
-    margin: 5px auto;
-    border-radius: 10px;
-}
-.field.desc ul>li {
-    text-align: left;
+    background: rgba(30, 20, 50, 0.85);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 14px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 51, 102, 0.15);
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 500px) {
-    #main {
-        padding: 0 5px;
-    }
-    .field {
-        width: 100%;
-        padding: 15px 0;
-    }
-    .field.desc ul {
-        margin: 0 15px;
-    }
-    .field.desc ul>li {
-        text-align: left;
-    }
+.field:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 51, 102, 0.2);
 }
 
-ul>li {
-    margin-bottom: 10px;
-    list-style-type: none;
+.title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ff6699;
+    margin-bottom: 16px;
     text-align: center;
-}
-ul>li.text {
-    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
-.field .title {
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: #343A40;
+ul {
+    list-style: none;
 }
-a, a:active, a:hover, a:focus, a:visited{
-    color: inherit;
+
+ul li {
+    margin: 11px 0;
+    text-align: center;
+    font-size: 15.8px;
+    word-break: break-all;
+}
+
+ul li a {
+    color: #ffccdd;
     text-decoration: none;
+    transition: color 0.2s;
 }
 
+ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
 
+/* Logo 区域 */
 .brand {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     text-align: center;
-    color: #000;
-    font-size: 30px;
-    font-weight: 200;
-    cursor: pointer;
+    margin-bottom: 28px;
+}
+
+.brand img {
+    filter: drop-shadow(0 4px 12px rgba(255, 102, 153, 0.4));
 }
 
 .brand span {
-    color: #ed2333;
-    font-weight: 200;
+    font-size: 34px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
+
 .brand span.flag {
+    background: linear-gradient(90deg, #ff3366, #ff6699);
     color: #fff;
-    background: #ed2333;
-    border-radius: 0.25rem;
-    font-size: 16px;
-    font-weight: bold;
-    display: inline-block;
-    padding: 0 5px;
-    margin-left: 5px;
-    line-height: 30px;
+    font-size: 19px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    margin-left: 10px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(255, 51, 102, 0.5);
+}
+
+/* TG 和特殊链接 */
+ul li a[href*="t.me"] {
+    color: #00b0ff;
+    font-weight: 500;
+}
+
+/* 注意事项样式 */
+.field.desc {
+    background: rgba(40, 30, 60, 0.7);
+    border: 1px solid rgba(255, 102, 153, 0.1);
+}
+
+.field.desc ul li {
+    text-align: left;
+    color: #bbbbdd;
+    font-size: 14.5px;
+    margin-bottom: 8px;
+}
+
+/* 移动端优化 */
+@media (max-width: 600px) {
+    .field {
+        padding: 18px 18px;
+        margin: 12px 0;
+    }
+    .title {
+        font-size: 17.5px;
+    }
+    .brand span {
+        font-size: 30px;
+    }
 }
